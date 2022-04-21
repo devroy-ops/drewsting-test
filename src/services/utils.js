@@ -1,4 +1,4 @@
-import { connect, Contract, keyStores, WalletConnection, nearAPI } from 'near-api-js';
+import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
 import getConfig from '../config';
 import { formatNearAmount } from 'near-api-js/lib/utils/format';
 import { nftMethods, marketMethods } from '../Constants/contractMethods';
