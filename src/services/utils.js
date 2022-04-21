@@ -11,7 +11,7 @@ let available;
  export const marketContractName = "draw1.near"; 
  export const smartContractName = "drawstring_v2.near";
 
-//// dev 
+//// dev
 //  const nearConfig = getConfig("testnet");
 //  export const marketContractName = "drawstringmarketplace.testnet";
 //  export const smartContractName = "helper1.testnet";
