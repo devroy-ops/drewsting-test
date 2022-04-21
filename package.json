@@ -27,7 +27,7 @@
     "react-drag-drop-files": "^2.3.5",
     "react-hook-form": "^7.29.0",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.6",
     "react-select": "^5.2.2",
     "react-select-async-paginate": "^0.6.1",
