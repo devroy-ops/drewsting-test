@@ -16,6 +16,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+      - name: Install system dependencies
+        run: while read -r cmd
+                do
+                  eval sudo $cmd
+                done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
       - name: Build React App
         run: npm install && npm run build
       - name: Deploy app build to S3 bucket
