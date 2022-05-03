@@ -1,6 +1,6 @@
 name: Upload Website
 
-on:
+on: 
  push:
    branches:
      - master
