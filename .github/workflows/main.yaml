@@ -1,13 +1,13 @@
-name: Upload Website
+name: Upload Website 
 
-on: 
+on:
  push:
    branches:
-     - master
- 
-jobs:
- Deploy:  
-   runs-on: ubuntu-latest 
+     - main
+
+jobs: 
+ Deploy:
+   runs-on: ubuntu-latest
    steps:
      - name: Checkout
        uses: actions/checkout@v2
@@ -20,20 +20,13 @@ jobs:
 
      - name: Build static file
        run: CI=false npm run build
-
-     - name: Configure AWS Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: us-east-1
- 
+       
      - name: Deploy to Staging server
        uses: easingthemes/ssh-deploy@main
        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-            SOURCE: "build"
-            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-            REMOTE_USER: ${{ secrets.REMOTE_USER }}
-            TARGET: ${{ secrets.TARGET_DIR }}
-            run: CI=fasle npm rum build           
+         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+         SOURCE: "build/"
+         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+         REMOTE_USER: ${{ secrets.REMOTE_USER }}
+         TARGET: "/var/www/html/"
+         EXCLUDE: "/dist/, /node_modules/"
