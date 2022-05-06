@@ -30,4 +30,3 @@ jobs:
          REMOTE_USER: ${{ secrets.REMOTE_USER }}
          TARGET: "/var/www/html/drawsting/build/"
          EXCLUDE: "/dist/, /node_modules/"
- 
