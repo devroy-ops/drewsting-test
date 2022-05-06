@@ -28,5 +28,5 @@ jobs:
          SOURCE: "build/"
          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-         TARGET: "/var/www/html/"
+         TARGET: "/var/www/html/drawstring/build/"
          EXCLUDE: "/dist/, /node_modules/"
