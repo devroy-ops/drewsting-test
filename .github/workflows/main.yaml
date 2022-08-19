@@ -12,7 +12,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
        
-     - name: Setup node
+     - name: Setup node 
        uses: actions/setup-node@v2
 
      - name: Install dependencies
